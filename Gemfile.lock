@@ -1,0 +1,12 @@
+GEM
+  specs:
+    terminal-notifier (1.7.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  terminal-notifier
+
+BUNDLED WITH
+   1.13.7
