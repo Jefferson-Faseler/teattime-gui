@@ -16,7 +16,7 @@ Shoes.app do
   @button = button @button_title do
     @start_time = Time.now
     @alert_time = @start_time + @length
-    animate(1) do |second|
+    @timer = animate(1) do |second|
       if second >= @length
         transform_page
         return @osascript
@@ -27,6 +27,12 @@ Shoes.app do
   end
 
   @button.move(10, 380)
+
+  @pause = button 'Pause Timer' do
+    @timer.toggle
+  end
+
+  @pause.move(10,350)
 
   def transform_page
     if @button_title == 'Start Work'
