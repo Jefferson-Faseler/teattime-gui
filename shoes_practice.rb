@@ -20,7 +20,7 @@ Shoes.app do
     @break_label.hide
     @work_start = Time.now
     @timer = animate(1) do |second|
-      if second > 1500
+      if second > 10
         @work_label.hide
         @break_button.show
         @break_label.show
@@ -36,7 +36,7 @@ Shoes.app do
     @work_label.hide
     @break_start = Time.now
     @timer = animate(1) do |second|
-      if second > 300
+      if second > 10
         @break_label.hide
         @work_button.show
         @work_label.show
