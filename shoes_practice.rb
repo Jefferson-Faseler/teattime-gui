@@ -1,5 +1,6 @@
 Shoes.app do
 
+  background "#FFDBAA".."#805215"
   @image = image "static/tea-icon-14700.png"
   @image.move(380,390)
   @label = banner "Time to work"
