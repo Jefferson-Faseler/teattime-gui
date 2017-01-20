@@ -11,7 +11,7 @@ Shoes.app do
     @counter = para ""
     animate(1) do |second|
       if second >= @length
-        def transform_page
+        transform_page
         @counter.clear
         return @osascript
       else
