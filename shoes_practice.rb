@@ -11,7 +11,7 @@ Shoes.app do
   @counter.move(380, 300)
 
   #inversed script because of order of events
-  @osascript = `osascript -e 'display notification "Back to the grind" with title "One more sip!"'`
+  @osascript = `osascript -e 'display notification "Back to the grind" with title "One more sip!" sound name "Glass"'`
 
   @button = button @button_title do
     @start_time = Time.now
@@ -29,11 +29,18 @@ Shoes.app do
   @button.move(10, 380)
 
   def transform_page
-    @button_title = 'Start Break'
-    @length = 300
+    if @button_title == 'Start Work'
+      @button_title = 'Start Break'
+      @length = 300
+      @osascript = `osascript -e 'display notification "Drink up old chap" with title "Tea Time!" sound name "Glass"'`
+      @label = banner "Time for tea"
+    else
+      @button_title = 'Start Work'
+      @length = 1500
+      @osascript = `osascript -e 'display notification "Back to the grind" with title "One more sip!" sound name "Glass"'`
+      @label = banner "Time to work"
+    end
     @counter.clear
-    @osascript = `osascript -e 'display notification "Drink up old chap" with title "Tea Time!"'`
-    @label = banner "Time for tea"
   end
 
 end
